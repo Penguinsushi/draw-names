@@ -1,0 +1,45 @@
+DirectoryIndex index.php
+
+Options -Indexes
+
+ErrorDocument 404 /error/404
+
+addhandler application/x-httpd-php .html .php .htm .xml
+AddType application/x-httpd-php .html .php .htm .xml
+
+RewriteEngine on
+RewriteBase /
+
+#RewriteCond %{HTTP_HOST} www\.penguinsushi\.com [OR]
+#RewriteRule (.*) http://penguinsushi.com/$1 [L,R=301]
+
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# redirect www
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# redirect www
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+#RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+#remove trailing slashes
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+##RewriteCond %{REQUEST_URI} (.*)$
+#RewriteRule ^(.+)/$ http://penguinsushi.com/$1 [R=301,L]
+##RewriteRule ^(.+)(\.php|\.html)/$  /$1$2 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+#account for removed index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico|sitemap\.xml)
+RewriteRule ^(.*)$ index.php?/$1 [L]

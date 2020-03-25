@@ -1,0 +1,104 @@
+#site_body {
+    -webkit-text-size-adjust: none;
+    width:100%;
+    background-color:white;
+    padding:0px;
+    margin:0px;
+    font-family:Arial;
+    color:#343434;
+}
+
+#content 
+{
+    padding:20px;
+}
+
+.formtable
+{
+    margin-bottom:10px;
+    width:100%;
+}
+
+    .formtable td
+    {
+        padding:5px;
+    }
+
+        .formtable td.labelcell
+        {
+            width:150px;
+        }
+
+        .formtable td.inputcell
+        {
+
+        }
+        
+        .formtable td.inputcell input
+        {
+            width:100%;
+        }
+        
+        .formtable td.inputcell textarea
+        {
+            width:100%;
+        }
+
+input 
+{
+    border-radius: 3px;
+    border:1px solid #cecece;
+    padding:5px;
+    /*width:350px;*/
+}
+
+textarea 
+{
+    border-radius: 3px;
+    border:1px solid #cecece;
+    padding:5px;
+    /*width:350px;*/
+    height:200px;
+}
+
+.submit_button
+{
+    background-color:navy;
+    color:white;
+    font-weight:bold;
+    /*width:150px;*/
+    border:none;
+    border-radius:3px;
+    padding:5px;
+    margin-bottom:10px;
+    margin-top:10px;
+    max-width:400px;
+}
+
+.errorbox
+{
+    padding:10px;
+    margin:10px 0 10px 0;
+    background-color:pink;
+    color:red;
+    
+}
+
+.messagebox
+{
+    padding:10px;
+    margin:10px 0 10px 0;
+    background-color:#ebebeb;
+    color:#343434;    
+}
+
+.banner
+{
+    background-color:navy;
+    padding:10px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    margin-bottom:10px;
+    border-radius: 3px;
+}
