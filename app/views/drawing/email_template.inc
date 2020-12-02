@@ -5,7 +5,7 @@
 
 <p style='font-size:18px;color:green;'><?php echo $BF->ParticipantFirstName ?> <?php echo $BF->ParticipantLastName ?></p>
 
-<?php if (!empty($DRAWING->CustomMessage)) { ?>
+<?php if (!empty($DRAWING->DrawingCustomMessage)) { ?>
 <p><span style="color:maroon;font-weight:bold;"><?php echo $DRAWING->DrawingCustomMessage ?></span></p>
 <?php } ?>
 
