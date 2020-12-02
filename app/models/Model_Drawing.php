@@ -11,6 +11,7 @@ class Model_Drawing extends Model
     public $DrawingDateTime = '';
     public $DrawingEventDate = '';
     public $DrawingEventLocation = '';
+    public $DrawingCustomMessage = '';
     public $DrawingToken = '';
     public $DrawingCoordinatorEmailAddress = '';
     public $DrawingPerformed = 0;

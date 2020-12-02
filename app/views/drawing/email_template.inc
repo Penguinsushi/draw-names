@@ -5,6 +5,10 @@
 
 <p style='font-size:18px;color:green;'><?php echo $BF->ParticipantFirstName ?> <?php echo $BF->ParticipantLastName ?></p>
 
+<?php if (!empty($DRAWING->CustomMessage)) { ?>
+<p><span style="color:maroon;font-weight:bold;"><?php echo $DRAWING->DrawingCustomMessage ?></span></p>
+<?php } ?>
+
 <p>Suggested gift value for this drawing has been set at <span style='color:navy;'>$<?php echo $DRAWING->DrawingGiftValue ?></span>.</p>
 
 <p>The event is scheduled to take place at <span style='color:navy;'><?php echo $DRAWING->DrawingEventLocation ?></span> on <span style='color:navy;'><?php $eventtime = strtotime($DRAWING->DrawingEventDate); echo date('F j, Y',$eventtime) ?></span> - you've got <b><?php echo ceil((((($eventtime - time())/60)/60)/24)) ?> days</b>!</p>
